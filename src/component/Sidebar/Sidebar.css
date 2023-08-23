@@ -1,0 +1,106 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 2rem;
+    transition: all 300ms ease;
+}
+.logo{
+    display: flex;
+    font-weight: bold;
+    font-size: 22px;
+    height: 4%;
+    align-items: center;
+    justify-content: center;
+}
+.logo>img{
+    height: 4rem;
+    width: 5rem;
+    margin-left: -3rem;
+    z-index: 1;
+   background-color: pink;
+   position: relative;
+   mix-blend-mode: darken;
+
+}
+.o{
+    color: orange;
+}
+.menu{
+    margin-top:3rem ;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.menu-item{
+    display:flex;
+    align-items: center;
+    gap:1rem;
+    height: 2.5rem;
+    margin-left: 2rem;
+    position: relative;
+    transition: all 300ms ease;
+    font-size: 14px;
+    border-radius: 0.7rem;
+}
+.menu-item:hover{
+  cursor: pointer;
+}
+.active{
+    background:var(--activeItem);
+    margin-left: 0;
+}
+.active::before{
+  content: '';
+  width: 8px;
+  background: pink;
+  margin-right: calc(1rem - 8px);
+}
+
+.menu .menu-item:last-child{
+    position: absolute;
+    bottom:2.4rem;
+    width: 100%;
+}
+.bars{
+    display: none;
+}
+@media screen and (max-width: 1200px) {
+    .menu-item>span{
+        display: none;
+    }
+    .logo{
+        display:none;                                                            
+        justify-content:flex-start;
+     }
+}
+@media screen and (max-width: 768px) {
+    .menu-item>span{
+      display: block; 
+    }
+    .sidebar{
+        position: fixed;
+        z-index: 9;
+        background: #ffe0e0;
+        width: 55%;
+        padding-right: 1rem;
+        height: 100%;
+    }
+    .logo{
+        display: flex;
+    }
+    .menu .menu-item :last-child{
+   position: relative;
+   margin-top: 2rem;
+    }
+    .bars{
+      display: flex;
+      position:fixed;
+      top:2rem;
+      z-index:9;
+      background: #ffe0e0;
+      padding: 10px;
+      border-radius: 10px;
+    }
+}
+
